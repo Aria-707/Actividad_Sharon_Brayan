@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería de Playlists</title>
+    <style>
+        /*CONFIGURACIONES BOTONES*/
+        button {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 20px;
+            display: block;
+            box-sizing: border-box;
+            font-family: 'AvenirNext LT Pro Light';
+            src: url('fuente/avenir-next-lt-pro-light.otf') format('opentype');
+            font-weight: 700;
+            letter-spacing: 6px;
+        }
+
+        button:hover {
+            background-color: #262626;
+        }
+
+        button:disabled {
+            background-color: #595959;
+            color: #ffffff;
+            cursor: default;
+        }
+
+        button:disabled:hover {
+            background-color: #595959;
+        }
+
+        /*CONFIGURACIONES MENÚ*/
+        .tabla-header {
+            padding: 0;
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .tabla-header th,
+        .tabla-header td {
+            background-color: transparent;
+            padding: 0;
+            border: 2px solid #ffffff;
+            min-height: 39px;
+            height: 39px;
+            box-sizing: border-box;
+        }
+
+        .tabla-header th {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .container-header {
+            max-width: 1630px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        /*CONFIGURACIÓN SEPARADOR*/
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: white;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 90px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*CONFIGURACIÓN FUENTE*/
+        @font-face {
+            font-family: 'AvenirNext LT Pro Light';
+            src: url('fuente/avenir-next-lt-pro-light.otf') format('opentype');
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+
+        .fuente-tabla {
+            font-family: 'AvenirNext LT Pro Light';
+            src: url('fuente/avenir-next-lt-pro-light.otf') format('opentype');
+            font-weight: 700;
+
+            font-size: 25px;
+            letter-spacing: 6px;
+        }
+
+        .fuente {
+            font-family: 'AvenirNext LT Pro Light';
+            src: url('fuente/avenir-next-lt-pro-light.otf') format('opentype');
+            font-weight: lighter;
+            font-size: 75px;
+            letter-spacing: 12px;
+        }
+
+        .fuente-songs {
+            font-family: 'Segoe UI Variable Display Light';
+            src: url('fuente/SegUIVar.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+        .table-container table {
+            font-family: 'AvenirNext LT Pro Light';
+            font-weight: lighter;
+            letter-spacing: 1px;
+        }
+
+        /*CONFIGURACIÓN ALINEACIÓN DE TEXTO EN TABLAS*/
+
+        .table-container table tbody tr td:first-child {
+            text-align: left;
+        }
+
+        .table-container table tbody tr td:last-child {
+            text-align: right;
+        }
+
+        .table-container table thead th:first-child {
+            text-align: left;
+        }
+
+        .table-container table thead th:last-child {
+            text-align: right;
+        }
+
+        .header-container {
+            background-color: #2929295b;
+            width: 100%;
+            padding: 1px 0;
+            margin-bottom: 0;
+            box-shadow: 0 20px 0 #2929295b;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('img/BG.PNG');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        a {
+            color: white;
+            /* Cambia el color del enlace a blanco */
+            text-decoration: none;
+            /* Elimina el subrayado */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* Opcional: Agrega un subrayado al pasar el mouse */
+        }
+
+        h1 {
+            border: none;
+            font-size: 48px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th,
+        td {
+            background-color: transparent;
+            padding: 10px;
+            border: 2px solid #ffffff;
+        }
+
+        th {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .table-container th:empty {
+            width: 400px;
+            /* Las celdas vacías ocuparán 0 espacio */
+            padding: 0;
+            /* También puedes quitar el padding si es necesario */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="container-header">
+            <div>
+                <table class="tabla-header">
+                    <thead>
+                        <tr>
+                            <th>
+                                <button disabled>PLAYLISTS</button>
+                            </th>
+                            <th colspan="3"></th>
+                            <th>
+                                <button onclick="window.location.href='index2.html';">IMÁGENES</button>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container-header">
+        <div class="container-header">
+            <h1 class="fuente">LIBRERÍA</h1>
+            <div class="table-container" style="margin-top: 50px">
+                <table style="min-height: 450px">
+                    <thead>
+                        <tr>
+                            <th class="fuente-tabla" style="padding-top: 16px; padding-bottom: 16px;">LISTA DE SHARON
+                            </th>
+                            <th colspan="2" style="padding-left: 0; padding-right: 0;"></th>
+                            <th class="fuente-tabla" style="padding-top: 16px; padding-bottom: 16px;">LISTA DE BRAYAN
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/5JwyFzThGsjFxkB1mo01ac?si=f657e515c11e454c" target="_blank">Favors - PLAZA</a>
+                            </td>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/75UMtPC77vqKRwfSuYuNPO?si=fcuaJv77SFegY_wvf0EL9g&nd=1&dlsi=e05b0b559a564b73" target="_blank">San Lucas - Kevin Kaarl</a>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/1Aw9fMFqR1nFy83RPDPcOo?si=8a310e781dc54abd" target="_blank">Toss Up - Darci</a>
+                            </td>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/6b37xrsNCWYIUphFBazqD6?si=PiFCOgy5Sdy3um9nR_G-MQ&nd=1&dlsi=d06b153b44d74852" target="_blank">Me Gustas Tu - Manu Chao</a> 
+                            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/2edkogvqZcdQcGSSxOvQs2?si=529ec62830e34f36" target="_blank">Karma - PLAZA</a>
+                            </td>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/1B4XhExXA4NswSQPetDuEg?si=m9SZL5LBSQmtJsE-1VaWYQ&nd=1&dlsi=2fb296d4eda64da0" target="_blank">Arbol Sin Hojas - Dread Mar I</a> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/6MZqPtmhyVsE7AcNxi2IUC?si=db3c2ad3d8764469" target="_blank">Code Red - Darci</a>
+                            </td>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/0LpEr3qpmDQ1gEabnsQlGC?si=WTwFwqiSTM233xhvBsPXoQ&nd=1&dlsi=59f6e16321cd40b3" target="_blank">La Distancia - Manuel Medrano</a> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/59emeHfChQT6Tekq9oxitd?si=7c10f66f19834cc0" target="_blank">Emily - PLAZA</a>
+                            </td>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/4AvQGX7JNmA0VkwT1JmL8D?si=UD8Yu6VOTIeBBEqaYkA7MA&nd=1&dlsi=cacd79fe16bc4da2" target="_blank">Mil Horas - Los Abuelos De La Nada</a> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/5HpEdc4S0zed46fz9EZK3u?si=f5144a832ba24b6c" target="_blank">Arts and Crafts - Darci</a>
+                            </td>
+                            <td colspan="2" class="fuente-songs">
+                                <a href="https://open.spotify.com/intl-es/track/6pYbhX5gYix4ESpbSUArnA?si=Ce-Yo8jzQvCYlwFFsC9O7Q&nd=1&dlsi=fedf8c1256fe4db7" target="_blank">Devuélveme a mi chica - Hombres G</a> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>s
